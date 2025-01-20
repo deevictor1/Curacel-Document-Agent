@@ -64,3 +64,52 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+# Curacel Document Agent
+
+## Setup Instructions
+
+1. Clone the repository
+2. Copy `.env.example` to `.env`:
+   ```bash
+   cp .env.example .env
+   ```
+3. Update `.env` with your configuration:
+   - Set your database credentials
+   - Set your Google OAuth credentials
+   - Set your APP_URL and ASSET_URL
+   
+4. Install dependencies:
+   ```bash
+   composer install
+   npm install
+   ```
+
+5. Generate application key:
+   ```bash
+   php artisan key:generate
+   ```
+
+6. Run migrations:
+   ```bash
+   php artisan migrate
+   ```
+
+7. Build/compile assets:
+   For development:
+   ```bash
+   npm run dev
+   ```
+   For production:
+   ```bash
+   npm run build
+   ```
+
+## Google OAuth Setup
+
+1. Go to Google Cloud Console
+2. Create or select a project
+3. Enable Google Drive API
+4. Create OAuth 2.0 credentials
+5. Add authorized redirect URI: `https://your-domain.com/auth/google/callback`
+6. Copy Client ID and Client Secret to `.env`
